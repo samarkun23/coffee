@@ -3,16 +3,22 @@ document.querySelector('#menu-btn').onclick =  () =>{
     navbar.classList.toggle('active');
 } 
 
+//search btn function 
+let searchForm = document.querySelector('.search-form');
+document.querySelector('#search-btn').onclick =  () =>{
+    searchForm.classList.toggle('active');
+} 
 
 
-
+//cart-btn fin
 const btn = document.querySelector("#cart-btn");
 const container = document.querySelector(".cart-item-container");
+let marginset = false;
 btn.addEventListener('click', () => {
-    const container = document.querySelector(".cart-item-container");
-   // container.style.margin = '165.2vh';
-   // container.style.backgroundColor = 'white';
-   // container.style.setProperty('height', '200px');
-    container.style.setProperty('margin', '21.3vh 0px 0px 165.2vh');
-    alert("hy");
-})
+    if (marginset) {
+        container.style.marginLeft = '138.2vh'; // ye display kara rha hai 165.2vh
+    } else {
+        container.style.marginLeft = '277vh'; // ye hide kar raha hai //277
+    }
+    marginset = !marginset; // Toggle karna
+});
